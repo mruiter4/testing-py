@@ -1,14 +1,14 @@
 """Flask site for Balloonicorn's Party."""
 
 from flask import Flask, session, render_template, request, flash, redirect
-from flask_debugtoolbar import DebugToolbarExtension
+#from flask_debugtoolbar import DebugToolbarExtension
 
 from partyutil import is_mel, most_and_least_common_type
 
 app = Flask(__name__)
 app.secret_key = 'SECRETSECRETSECRET'
 
-app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = True
+#app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = True
 app.config['PRESERVE_CONTEXT_ON_EXCEPTION'] = True
 
 # One day I'll move this to a database --Balloonicorn
@@ -76,5 +76,5 @@ def rsvp():
 
 if __name__ == '__main__':
     app.debug = True
-    DebugToolbarExtension(app)
+    #DebugToolbarExtension(app)
     app.run(host='0.0.0.0')
